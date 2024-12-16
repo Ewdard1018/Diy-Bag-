@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Complete Your Payment</h1>
+    </header>
+    <section id="payment">
+        <div class="payment-container">
+            <h2>Your Selected Colors</h2>
+            <p>Handle: <span id="handle"></span></p>
+            <p>Outer: <span id="outer"></span></p>
+            <p>Inner: <span id="inner"></span></p>
+            <h3>WeChat Pay</h3>
+            <img src="images/wechat_payment.jpg" alt="WeChat Pay" class="payment-img">
+            <h3>AliPay</h3>
+            <img src="images/alipay_payment.jpg" alt="AliPay" class="payment-img">
+        </div>
+    </section>
+    <script>
+        document.getElementById('handle').innerText = localStorage.getItem('handleColor') || 'Not Selected';
+        document.getElementById('outer').innerText = localStorage.getItem('outerColor') || 'Not Selected';
+        document.getElementById('inner').innerText = localStorage.getItem('innerColor') || 'Not Selected';
+    </script>
+</body>
+</html>

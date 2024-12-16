@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY Your Bag</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>DIY Art Bag Store</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="diy.html">DIY Design</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="diy">
+        <h2>DIY Your Bag</h2>
+        <div class="diy-container">
+            <label for="handle-color">Handle Color:</label>
+            <input type="color" id="handle-color" value="#000000" onchange="updateBagColor()">
+            <label for="outer-color">Outer Bag Color:</label>
+            <input type="color" id="outer-color" value="#ffffff" onchange="updateBagColor()">
+            <label for="inner-color">Inner Bag Color:</label>
+            <input type="color" id="inner-color" value="#cccccc" onchange="updateBagColor()">
+            <div id="bagPreview" class="bag-preview">
+                <svg width="200" height="300" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="outer-bag" x="20" y="50" width="160" height="200" fill="#ffffff" />
+                    <rect id="inner-bag" x="30" y="60" width="140" height="180" fill="#cccccc" />
+                    <rect id="handle" x="80" y="10" width="40" height="40" fill="#000000" />
+                </svg>
+            </div>
+            <img src="images/diy_paint.jpg" alt="DIY Paint Set" class="diy-paint-img">
+            <button onclick="proceedToPayment()">Proceed to Payment</button>
+        </div>
+    </section>
+    <script>
+        function proceedToPayment() {
+            localStorage.setItem('handleColor', document.getElementById('handle-color').value);
+            localStorage.setItem('outerColor', document.getElementById('outer-color').value);
+            localStorage.setItem('innerColor', document.getElementById('inner-color').value);
+            location.href = 'payment.html';
+        }
+    </script>
+    <style>
+        .diy-paint-img {
+            display: block;
+            margin: 20px auto;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</body>
+</html>
